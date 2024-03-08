@@ -61,8 +61,14 @@ nextArrow.addEventListener('click', function() {
     //aumentare l'index dell'immagine attiva 
     activeImageIndex += 1
 
+    // quando le immagini arrivano alla fine, torna alla prima
+    if (activeImageIndex > 4) {
+        activeImageIndex = 0
+    }
+
     //mettere la classe active alla seconda immagine 
     imageItemsArray[activeImageIndex].classList.add('active')
+
 })
 
 // aggiungere un event listener alla previousArrow per passare all'immagine precedente
@@ -72,6 +78,11 @@ previousArrow.addEventListener('click', function() {
 
     //aumentare l'index dell'immagine attiva 
     activeImageIndex -= 1
+
+    // quando le immagini arrivano alla fine, torna all'ultima
+    if (activeImageIndex < 0) {
+        activeImageIndex = 4
+    }
 
     //mettere la classe active alla seconda immagine 
     imageItemsArray[activeImageIndex].classList.add('active')
