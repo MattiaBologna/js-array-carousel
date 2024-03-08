@@ -36,6 +36,16 @@ for (let imageIndex = 0; imageIndex < arrayImages.length; imageIndex++) {
 
     // appendere al container delle immagini gli elementi con le immagini create
     imagesContainerDOMElement.append(imageItem)
+
+    // Aggiungere la visualizzazione di tutte le thumbnails sulla destra dell’immagine grande attiva, come nello screenshot proposto. 
+    // Tutte le miniature avranno un layer di opacità scura, tranne quella corrispondente all’immagine attiva, che invece avrà un bordo colorato.
+    // Al click delle frecce, oltre al cambio di immagine attiva, gestire il cambio di miniatura attiva.
+
+    // recuperare l'elemento thumbnail dall'html
+    const thumbnailDOMElement = document.getElementById('thumbnail') 
+
+    // inserire tutte le immagini nella thumbnail
+    thumbnailDOMElement.innerHTML += `<img src="./img/0${imageIndex + 1}.webp">`
 }
 
 
@@ -87,4 +97,9 @@ previousArrow.addEventListener('click', function() {
     //mettere la classe active alla seconda immagine 
     imageItemsArray[activeImageIndex].classList.add('active')
 })
+
+
+
+
+
 
