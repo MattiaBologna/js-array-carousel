@@ -46,3 +46,34 @@ const imageItemsArray = document.getElementsByClassName('item')
 imageItemsArray[0].classList.add('active')
 
 
+// recuperare gli elementi delle frecce 
+const previousArrow = document.getElementById('previous');
+const nextArrow = document.getElementById('next');
+
+// definire l'indice dell'immagine attiva 
+let activeImageIndex = 0
+
+// aggiungere un event listener alla nextArrow per passare all'immagine successiva
+nextArrow.addEventListener('click', function() {
+    // rimuovere classe active dalla prima immagine 
+    imageItemsArray[activeImageIndex].classList.remove('active')
+
+    //aumentare l'index dell'immagine attiva 
+    activeImageIndex += 1
+
+    //mettere la classe active alla seconda immagine 
+    imageItemsArray[activeImageIndex].classList.add('active')
+})
+
+// aggiungere un event listener alla previousArrow per passare all'immagine precedente
+previousArrow.addEventListener('click', function() {
+    // rimuovere classe active dalla prima immagine 
+    imageItemsArray[activeImageIndex].classList.remove('active')
+
+    //aumentare l'index dell'immagine attiva 
+    activeImageIndex -= 1
+
+    //mettere la classe active alla seconda immagine 
+    imageItemsArray[activeImageIndex].classList.add('active')
+})
+

@@ -36,3 +36,24 @@ img {
 .active {
     display: block;
 }
+
+.arrow {
+    border-radius: 99999px;
+    padding: 5px 8px;
+    background-color: lightblue;
+}
+
+#previous, #next {
+    position: absolute;
+    right: 50%;
+    transform: translate(-50%);
+}
+
+#next {
+    transform: translateY(-150%);
+}
+
+#previous {
+    top: 0;
+    transform: translateY(100%);
+}
