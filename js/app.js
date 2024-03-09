@@ -45,7 +45,7 @@ for (let imageIndex = 0; imageIndex < arrayImages.length; imageIndex++) {
     const thumbnailDOMElement = document.getElementById('thumbnail') 
 
     // inserire tutte le immagini nella thumbnail
-    thumbnailDOMElement.innerHTML += `<img src="./img/0${imageIndex + 1}.webp">`
+    thumbnailDOMElement.innerHTML += `<img src="./img/0${imageIndex + 1}.webp" class="thumb">`
 }
 
 
@@ -54,6 +54,12 @@ for (let imageIndex = 0; imageIndex < arrayImages.length; imageIndex++) {
 const imageItemsArray = document.getElementsByClassName('item')
 // selezionare il container della prima immagine 
 imageItemsArray[0].classList.add('active')
+
+// fare in modo che solo la prima thumb abbia la classe active
+// selezionare i container delle classi thumb
+const thumbItemsArray = document.getElementsByClassName('thumb')
+// selezionare il container della prima immagine 
+thumbItemsArray[0].classList.add('active')
 
 
 // recuperare gli elementi delle frecce 
@@ -67,6 +73,7 @@ let activeImageIndex = 0
 nextArrow.addEventListener('click', function() {
     // rimuovere classe active dalla prima immagine 
     imageItemsArray[activeImageIndex].classList.remove('active')
+    thumbItemsArray[activeImageIndex].classList.remove('active')
 
     //aumentare l'index dell'immagine attiva 
     activeImageIndex += 1
@@ -78,13 +85,14 @@ nextArrow.addEventListener('click', function() {
 
     //mettere la classe active alla seconda immagine 
     imageItemsArray[activeImageIndex].classList.add('active')
-
+    thumbItemsArray[activeImageIndex].classList.add('active')
 })
 
 // aggiungere un event listener alla previousArrow per passare all'immagine precedente
 previousArrow.addEventListener('click', function() {
     // rimuovere classe active dalla prima immagine 
     imageItemsArray[activeImageIndex].classList.remove('active')
+    thumbItemsArray[activeImageIndex].classList.remove('active')
 
     //aumentare l'index dell'immagine attiva 
     activeImageIndex -= 1
@@ -96,6 +104,7 @@ previousArrow.addEventListener('click', function() {
 
     //mettere la classe active alla seconda immagine 
     imageItemsArray[activeImageIndex].classList.add('active')
+    thumbItemsArray[activeImageIndex].classList.add('active')
 })
 
 

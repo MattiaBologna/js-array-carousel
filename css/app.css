@@ -56,11 +56,13 @@ body {
 
 #next {
     transform: translateY(-150%);
+   opacity: 0.5;
 }
 
 #previous {
     top: 0;
     transform: translateY(100%);
+   opacity: 0.5;
 }
 
 #thumbnail {
@@ -71,6 +73,22 @@ body {
     display: none;
 }
 
+.thumb {
+    filter: grayscale(70%);
+}
+
+.thumb.active {
+    filter: grayscale(0%);
+    border: 2px solid magenta;
+}
+
+/* HOVERS */
+
 .container:hover #thumbnail {
     display: block;
+}
+
+.container:hover #previous, 
+.container:hover #next {
+    opacity: 1;
 }
